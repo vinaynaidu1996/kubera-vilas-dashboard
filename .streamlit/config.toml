@@ -3,3 +3,4 @@ base="dark"
 
 [client]
 toolbarMode="off"
+showErrorDetails=false
