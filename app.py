@@ -84,14 +84,21 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- HIDE STREAMLIT BRANDING UI ---
+# --- HIDE STREAMLIT BRANDING UI & DEVELOPER BADGE ---
 st.markdown("""
     <style>
-    #MainMenu {visibility: hidden; display: none;}
-    footer {visibility: hidden; display: none;}
-    [data-testid="stFooter"] {visibility: hidden; display: none;}
-    .stAppDeployButton {display: none;}
-    button[title="View app source"] {display: none;}
+    /* Hide menus and footers */
+    #MainMenu {visibility: hidden !important; display: none !important;}
+    footer {visibility: hidden !important; display: none !important;}
+    [data-testid="stFooter"] {visibility: hidden !important; display: none !important;}
+    
+    /* Hide specific Streamlit Deploy & Source buttons */
+    .stAppDeployButton {display: none !important;}
+    [data-testid="stAppDeployButton"] {display: none !important;}
+    button[title="View app source"] {display: none !important;}
+    
+    /* Hide the Streamlit Community Cloud Developer Badge (Profile Picture) */
+    div[class^="viewerBadge"] {display: none !important;}
     </style>
 """, unsafe_allow_html=True)
 
