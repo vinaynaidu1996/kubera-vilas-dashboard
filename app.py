@@ -297,7 +297,7 @@ with tab_ops:
                 marker_line_width=1.5
             )
             if max_bar_val < 15: fig_bar.update_yaxes(dtick=1)
-            st.plotly_chart(fig_bar, width='stretch')
+            st.plotly_chart(fig_bar, width='stretch', config={'staticPlot': True})
 
         with col_charts2:
             def get_category(dish):
@@ -339,7 +339,7 @@ with tab_ops:
                 marker_line_color='#ffffff',
                 marker_line_width=1.5
             )
-            st.plotly_chart(fig_cat, width='stretch')
+            st.plotly_chart(fig_cat, width='stretch', config={'staticPlot': True})
 
         # COMBOS & PIE CHART
         col_c, col_p = st.columns(2)
@@ -380,7 +380,7 @@ with tab_ops:
                     legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5,
                                 font=dict(size=15, color="#ffffff"))
                 )
-                st.plotly_chart(fig_pie, width='stretch')
+                st.plotly_chart(fig_pie, width='stretch', config={'staticPlot': True})
 
 # ==========================================
 # TAB 2: CUSTOMER EXPERIENCE
@@ -464,7 +464,7 @@ with tab_cx:
                 title=dict(text="5-Pillar Satisfaction Radar", font=dict(size=19, color="#ffffff")),
                 margin=dict(t=50, b=20, l=10, r=10)
             )
-            st.plotly_chart(fig_radar, width='stretch')
+            st.plotly_chart(fig_radar, width='stretch', config={'staticPlot': True})
 
         with sent_col:
             st.markdown("<h4 style='color: #ffffff; font-size: 19px; margin-bottom: 15px;'>Dish Sentiment Tracker</h4>",
