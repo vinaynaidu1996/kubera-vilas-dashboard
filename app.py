@@ -112,8 +112,18 @@ if not st.session_state.authenticated:
     st.markdown("<br><br>", unsafe_allow_html=True)
     col_pw1, col_pw2, col_pw3 = st.columns([1, 2, 1])
 
-    with col_pw2:
-        entered_password = st.text_input("🔒 Enter Dashboard Password", type="password")
+with col_pw2:
+        # 1. Create our own custom, large, bright white label
+        st.markdown("<p style='color: #ffffff; font-size: 22px; font-weight: bold; margin-bottom: 5px;'>🔒 Enter Dashboard Password</p>", unsafe_allow_html=True)
+        
+        # 2. Render the password box, but tell Streamlit to hide its default small label
+        entered_password = st.text_input("Password", type="password", label_visibility="collapsed")
+        
+        if entered_password == PASSWORD:
+            st.session_state.authenticated = True
+            st.rerun()
+        elif entered_password != "":
+            st.warning("Please enter the correct password to access the Kubera Vilas Dashboard.")
 
         if entered_password == PASSWORD:
             st.session_state.authenticated = True
@@ -164,7 +174,7 @@ day_feed_df = feed_df[feed_df['Call_Date'].dt.date == selected_date]
 # --- HEADER WITH LOGO ---
 col_logo, col_title = st.columns([1, 8])
 with col_logo:
-    st.image("kuberavilas1.PNG", width=400)
+    st.image("kuberavilas2.PNG", width=400)
 with col_title:
     st.markdown("<h1 style='color: #ffffff; margin-bottom: 0px; font-size: 32px;'>KUBERA VILAS</h1>",
                 unsafe_allow_html=True)
