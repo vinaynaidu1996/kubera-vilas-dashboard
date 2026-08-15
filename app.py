@@ -164,7 +164,7 @@ day_feed_df = feed_df[feed_df['Call_Date'].dt.date == selected_date]
 # --- HEADER WITH LOGO ---
 col_logo, col_title = st.columns([1, 8])
 with col_logo:
-    st.image("logo.png", width=70)
+    st.image("IMG_5755 2.png", width=70)
 with col_title:
     st.markdown("<h1 style='color: #ffffff; margin-bottom: 0px; font-size: 32px;'>KUBERA VILAS</h1>",
                 unsafe_allow_html=True)
